@@ -13,15 +13,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Salto",
-                    "type": "Button",
-                    "id": "5c5309cc-0130-44a9-8fa6-a76ab61bf8ac",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -79,17 +70,6 @@
                     "action": "Movimiento",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "58390630-48c4-4ab0-b12f-be027c2fe639",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Salto",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         }

@@ -12,10 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996de3e9edc466045b78d9da4eaa606e, type: 3}
   m_Name: Velociraptor
   m_EditorClassIdentifier: 
-  dinosaur: {fileID: 7696262348139584398, guid: c6411d66e09c2884abe6334cd7db36c3,
-    type: 3}
   nameDino: {fileID: 0}
-  lifeDinoData: {fileID: 0}
   damageDinoData: {fileID: 0}
-  lifeDino: 0
-  damageDino: 0
+  damageDino: 50

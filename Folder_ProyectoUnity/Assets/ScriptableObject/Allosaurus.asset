@@ -12,10 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996de3e9edc466045b78d9da4eaa606e, type: 3}
   m_Name: Allosaurus
   m_EditorClassIdentifier: 
-  dinosaur: {fileID: 3349872961320861188, guid: d68e905c9404530439488ef8a56a03fb,
-    type: 3}
   nameDino: {fileID: 0}
-  lifeDinoData: {fileID: 0}
   damageDinoData: {fileID: 0}
-  lifeDino: 0
-  damageDino: 0
+  damageDino: 30
