@@ -4,7 +4,7 @@ public class PlayerControler : MonoBehaviour
 {
     private Rigidbody rb;
     private Vector2 moveInput;
-    public float speed = 5f;
+    [SerializeField]private float speed;
 
     private void Awake()
     {
