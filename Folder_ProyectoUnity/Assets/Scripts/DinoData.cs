@@ -9,5 +9,6 @@ public class DinoData : ScriptableObject
     [SerializeField] private TextMeshProUGUI nameDino;
     [SerializeField] private TextMeshProUGUI damageDinoData;
     [SerializeField] private int damageDino;
+    [SerializeField] private AudioClipSO[] clipEffects;
 
 }
