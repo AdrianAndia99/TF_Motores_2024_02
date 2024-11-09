@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerControler : MonoBehaviour
@@ -8,8 +9,10 @@ public class PlayerControler : MonoBehaviour
     [SerializeField]private float speed;
 
     [Header("Rotacion y velocidad")]
-    [SerializeField] float velocidadRotacion;
+    [SerializeField] float speedRotation;
     [SerializeField] float giro;
+    public static event Action OnVictory;
+    public static event Action OnDefeat;
 
     private void Awake()
     {
@@ -28,12 +31,23 @@ public class PlayerControler : MonoBehaviour
         if (direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref velocidadRotacion, giro);
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref speedRotation, giro);
             transform.rotation = Quaternion.Euler(0, angle, 0);
 
             Vector3 moveDirection = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
             rb.MovePosition(transform.position + moveDirection * speed * Time.deltaTime);
 
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("EscapeDoor"))
+        {
+            OnVictory?.Invoke();
+        }
+        if (collision.gameObject.CompareTag("Dino"))
+        {
+            OnDefeat?.Invoke();
         }
     }
 }
