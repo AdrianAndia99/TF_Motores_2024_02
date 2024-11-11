@@ -10,11 +10,13 @@ public class GameManager : MonoBehaviour
     {
         PlayerControler.OnVictory += LoadVictoryScene;
         PlayerControler.OnDefeat += LoadDefeatScene;
+        PlayerControler.OnCollect += CollectItem;
     }
     private void OnDisable()
     {
         PlayerControler.OnVictory -= LoadVictoryScene;
         PlayerControler.OnDefeat -= LoadDefeatScene;
+        PlayerControler.OnCollect -= CollectItem;
     }
 
     private void LoadVictoryScene()
@@ -25,5 +27,10 @@ public class GameManager : MonoBehaviour
     private void LoadDefeatScene()
     {
         SceneManager.LoadScene("Defeat");
+    }
+
+    private void CollectItem()
+    {
+        Debug.Log("wazaaaa");
     }
 }
