@@ -14,7 +14,7 @@ public class SoundsSO : ScriptableObject
         }
         else
         {
-            Debug.Log("Índice fuera de rango del arreglo de efectos de sonido.");
+            Debug.Log("Indice fuera de rango del arreglo de efectos de sonido.");
         }
     }
     public void PlaySound0() 
