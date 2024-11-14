@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private AudioClipSO clipMenu;
+    [SerializeField] private AudioClipSO clipGame;
+
     private void OnEnable()
     {
         PlayerControler.OnVictory += LoadVictoryScene;
@@ -17,6 +20,19 @@ public class GameManager : MonoBehaviour
         PlayerControler.OnVictory -= LoadVictoryScene;
         PlayerControler.OnDefeat -= LoadDefeatScene;
         PlayerControler.OnCollect -= CollectItem;
+    }
+
+    private void Start()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        if(currentScene == "Menu")
+        {
+            clipMenu.PlayLoop();
+        }
+        else if(currentScene == "Game")
+        {
+            clipGame.PlayLoop();
+        }
     }
 
     private void LoadVictoryScene()
@@ -33,4 +49,15 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("wazaaaa");
     }
+
+    public void SceneChange(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Saliendo");
+    }
+
 }
