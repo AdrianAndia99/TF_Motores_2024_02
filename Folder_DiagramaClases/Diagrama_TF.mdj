@@ -2175,23 +2175,6 @@
 									"subViews": [
 										{
 											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGSsid5IDmCkY8=",
-											"_parent": {
-												"$ref": "AAAAAAGSsiX+jC9gv3Q="
-											},
-											"model": {
-												"$ref": "AAAAAAGSsid5FTlzcIs="
-											},
-											"font": "Arial;13;0",
-											"left": 741,
-											"top": 54,
-											"width": 179.85791015625,
-											"height": 13,
-											"text": "+SoundsSO soundDino",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
 											"_id": "AAAAAAGSsjQau0GgXvE=",
 											"_parent": {
 												"$ref": "AAAAAAGSsiX+jC9gv3Q="
@@ -2201,10 +2184,44 @@
 											},
 											"font": "Arial;13;0",
 											"left": 741,
-											"top": 69,
+											"top": 54,
 											"width": 179.85791015625,
 											"height": 13,
 											"text": "+privateTransform player;",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGSsid5IDmCkY8=",
+											"_parent": {
+												"$ref": "AAAAAAGSsiX+jC9gv3Q="
+											},
+											"model": {
+												"$ref": "AAAAAAGSsid5FTlzcIs="
+											},
+											"font": "Arial;13;0",
+											"left": 741,
+											"top": 69,
+											"width": 179.85791015625,
+											"height": 13,
+											"text": "+SoundsSO soundDino;",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGTLJI0JqLuREc=",
+											"_parent": {
+												"$ref": "AAAAAAGSsiX+jC9gv3Q="
+											},
+											"model": {
+												"$ref": "AAAAAAGTLJI0F6LlPlU="
+											},
+											"font": "Arial;13;0",
+											"left": 741,
+											"top": 84,
+											"width": 179.85791015625,
+											"height": 13,
+											"text": "+private Transform[] points;",
 											"horizontalAlignment": 0
 										}
 									],
@@ -2212,7 +2229,7 @@
 									"left": 736,
 									"top": 49,
 									"width": 189.85791015625,
-									"height": 38
+									"height": 53
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -2235,7 +2252,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 741,
-											"top": 92,
+											"top": 107,
 											"width": 179.85791015625,
 											"height": 13,
 											"text": "+private void Patrolling()",
@@ -2244,7 +2261,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 736,
-									"top": 87,
+									"top": 102,
 									"width": 189.85791015625,
 									"height": 23
 								},
@@ -4929,7 +4946,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSsgKHSfqycJE="
 							},
-							"name": "public static event Action OnCollision;"
+							"name": "public static event Action OnCollision;",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -5693,21 +5711,28 @@
 					"attributes": [
 						{
 							"_type": "UMLAttribute",
-							"_id": "AAAAAAGSsid5FTlzcIs=",
-							"_parent": {
-								"$ref": "AAAAAAGSsiX+iy9Yk3Y="
-							},
-							"name": "SoundsSO soundDino",
-							"type": ""
-						},
-						{
-							"_type": "UMLAttribute",
 							"_id": "AAAAAAGSsjQas0GR8lc=",
 							"_parent": {
 								"$ref": "AAAAAAGSsiX+iy9Yk3Y="
 							},
 							"name": "privateTransform player;",
 							"type": ""
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGSsid5FTlzcIs=",
+							"_parent": {
+								"$ref": "AAAAAAGSsiX+iy9Yk3Y="
+							},
+							"name": "SoundsSO soundDino;"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGTLJI0F6LlPlU=",
+							"_parent": {
+								"$ref": "AAAAAAGSsiX+iy9Yk3Y="
+							},
+							"name": "private Transform[] points;"
 						}
 					],
 					"operations": [
@@ -5846,7 +5871,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSsjnVM06Q2zA="
 							},
-							"name": "private AudioClipSO clipMenu"
+							"name": "private AudioClipSO clipMenu",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5854,7 +5880,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSsjnVM06Q2zA="
 							},
-							"name": "private AudioClipSO clipGame"
+							"name": "private AudioClipSO clipGame",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -5996,7 +6023,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGTD661Y2mfLVU="
 							},
-							"name": "private int LifePlayer;"
+							"name": "private int LifePlayer;",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -6004,7 +6032,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGTD661Y2mfLVU="
 							},
-							"name": "public static event Action OnCollision;"
+							"name": "public static event Action OnCollision;",
+							"type": ""
 						}
 					],
 					"operations": [
