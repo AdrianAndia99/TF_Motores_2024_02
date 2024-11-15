@@ -1,19 +1,21 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class PlayerControler : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
-
     private Vector2 moveInput;
     [SerializeField]private float speed;
 
     [Header("Rotacion y velocidad")]
-    [SerializeField] float speedRotation;
-    [SerializeField] float giro;
+    [SerializeField] private float speedRotation;
+    [SerializeField] private float giro; 
+    [SerializeField] private int scoreAmount;
+    [SerializeField] private SoundsSO playerEffects;
     public static event Action OnVictory;
     public static event Action OnDefeat;
-    public static event Action OnCollect;
+    public static event Action<int> OnCollect;
+    public static event Action OnCollision;
 
 
     private void Awake()
@@ -56,7 +58,8 @@ public class PlayerControler : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Item"))
         {
-            OnCollect?.Invoke();
+            OnCollect?.Invoke(scoreAmount);
+            scoreAmount++;
             Destroy(other.gameObject);
         }
     }

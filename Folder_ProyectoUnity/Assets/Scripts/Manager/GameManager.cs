@@ -11,15 +11,13 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerControler.OnVictory += LoadVictoryScene;
-        PlayerControler.OnDefeat += LoadDefeatScene;
-        PlayerControler.OnCollect += CollectItem;
+        PlayerController.OnVictory += LoadVictoryScene;
+        PlayerController.OnDefeat += LoadDefeatScene;
     }
     private void OnDisable()
     {
-        PlayerControler.OnVictory -= LoadVictoryScene;
-        PlayerControler.OnDefeat -= LoadDefeatScene;
-        PlayerControler.OnCollect -= CollectItem;
+        PlayerController.OnVictory -= LoadVictoryScene;
+        PlayerController.OnDefeat -= LoadDefeatScene;
     }
 
     private void Start()
@@ -43,11 +41,6 @@ public class GameManager : MonoBehaviour
     private void LoadDefeatScene()
     {
         SceneManager.LoadScene("Defeat");
-    }
-
-    private void CollectItem()
-    {
-        Debug.Log("wazaaaa");
     }
 
     public void SceneChange(string name)
