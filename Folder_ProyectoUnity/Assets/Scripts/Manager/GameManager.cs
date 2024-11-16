@@ -8,16 +8,19 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private AudioClipSO clipMenu;
     [SerializeField] private AudioClipSO clipGame;
+    [SerializeField] private AudioClipSO clipVictory;
+    [SerializeField] private AudioClipSO clipDefeat;
+
 
     private void OnEnable()
     {
         PlayerController.OnVictory += LoadVictoryScene;
-        PlayerController.OnDefeat += LoadDefeatScene;
+        UIcontroller.OnDefeat += LoadDefeatScene;
     }
     private void OnDisable()
     {
         PlayerController.OnVictory -= LoadVictoryScene;
-        PlayerController.OnDefeat -= LoadDefeatScene;
+        UIcontroller.OnDefeat -= LoadDefeatScene;
     }
 
     private void Start()
@@ -30,6 +33,14 @@ public class GameManager : MonoBehaviour
         else if(currentScene == "Game")
         {
             clipGame.PlayLoop();
+        }
+        else if(currentScene == "Victory")
+        {
+            clipVictory.PlayOneShoot();
+        }
+        else if(currentScene == "Defeat")
+        {
+            clipDefeat.PlayOneShoot();
         }
     }
 

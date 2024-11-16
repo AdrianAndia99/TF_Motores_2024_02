@@ -1761,7 +1761,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipMenu: {fileID: 11400000, guid: 195dbd4cd111c1f499387ded59dc16f0, type: 2}
-  clipGame: {fileID: 11400000, guid: 3630909d3ff467d45a6ffe29e9e685a8, type: 2}
+  clipGame: {fileID: 0}
+  clipVictory: {fileID: 0}
+  clipDefeat: {fileID: 0}
 --- !u!1 &1095643384
 GameObject:
   m_ObjectHideFlags: 0

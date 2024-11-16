@@ -10,13 +10,10 @@ public class PlayerController : MonoBehaviour
     [Header("Rotacion y velocidad")]
     [SerializeField] private float speedRotation;
     [SerializeField] private float giro; 
-    [SerializeField] private int scoreAmount;
     [SerializeField] private SoundsSO playerEffects;
     public static event Action OnVictory;
-    public static event Action OnDefeat;
     public static event Action<int> OnCollect;
-    public static event Action OnCollision;
-
+    public static event Action<int> OnCollision;
 
     private void Awake()
     {
@@ -26,6 +23,10 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+    }
+    public void OnSprint(InputAction.CallbackContext context)
+    {
+
     }
     private void FixedUpdate()
     {
@@ -51,15 +52,15 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Dino"))
         {
-            OnDefeat?.Invoke();
+            OnCollision?.Invoke(1);
+            //OnDefeat?.Invoke();
         }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Item"))
         {
-            OnCollect?.Invoke(scoreAmount);
-            scoreAmount++;
+            OnCollect?.Invoke(1);           
             Destroy(other.gameObject);
         }
     }
