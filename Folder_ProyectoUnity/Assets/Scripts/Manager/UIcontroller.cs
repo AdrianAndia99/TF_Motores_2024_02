@@ -17,7 +17,6 @@ public class UIcontroller : MonoBehaviour
     [SerializeField] private RectTransform panelTransform;
     [SerializeField] private float topPosY, centerPositionY;
     [SerializeField] private float tweenDuration;
-
     public static event Action OnDefeat;
     private int currentScore = 0;
     private int currentLive = 5;
@@ -37,7 +36,6 @@ public class UIcontroller : MonoBehaviour
     {        
         PausePanelIntro();
     }
-
     public void Resume()
     {
         PausePanelOutro();

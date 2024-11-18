@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using DG.Tweening;
+using System.Collections;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
