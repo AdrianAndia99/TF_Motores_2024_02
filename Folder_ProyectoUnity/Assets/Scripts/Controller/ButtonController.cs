@@ -7,7 +7,6 @@ public class ButtonController : MonoBehaviour
     public Button[] buttons;
     public float rotationSpeed = 1f; 
     [SerializeField] private float rotationAngle = 15f;
-    [SerializeField] private float scaleFactor = 1.2f;
     private Vector3 originalScale;
 
     void Start()
@@ -36,20 +35,5 @@ public class ButtonController : MonoBehaviour
             {
                 StartButtonRotation(button, !rotatePositive);
             });
-    }
-    private void OnMouseEnter()
-    {
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            buttons[i].transform.DOScale(originalScale * scaleFactor, 0.2f).SetEase(Ease.OutBack);
-        }
-    }
-
-    private void OnMouseExit()
-    {
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            buttons[i].transform.DOScale(originalScale, 0.2f).SetEase(Ease.InBack);
-        }
     }
 }
