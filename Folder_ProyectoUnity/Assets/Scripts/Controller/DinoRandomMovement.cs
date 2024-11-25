@@ -7,64 +7,60 @@ public class DinoRandomMovement : MonoBehaviour
 {
     NavMeshAgent agent;
     [SerializeField] private Animator dinoAnimator;
-    [SerializeField] private float rango = 10f;
-    [SerializeField] private float tiempoEspera = 1.5f;
-    [SerializeField] private float quieto = 1f;
+    [SerializeField] private float range = 10f;
+    [SerializeField] private float waitTime = 1.5f;
+    [SerializeField] private float stayTime = 1f;
 
-    bool esperando;
+    bool waiting;
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         dinoAnimator = GetComponent<Animator>();
-        moverAlPunto();
+        moveToPoint();
     }
 
     private void Update() 
     {
-        if (!esperando && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance && agent.hasPath)
+        if (!waiting && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance && agent.hasPath)
         {
-            if (Random.value < quieto)
+            if (Random.value < stayTime)
             {
-                StartCoroutine(esperaYmueve());
+                StartCoroutine(WaitMove());
             }
             else
             {
-                moverAlPunto();
+                moveToPoint();
             }
         }
-        else if (!agent.hasPath && !esperando)
+        else if (!agent.hasPath && !waiting)
         {
-            moverAlPunto();
+            moveToPoint();
         }
 
         dinoAnimator.SetBool("isWalking", agent.velocity.sqrMagnitude > 0.1f);
     }
 
-    private void moverAlPunto()
+    private void moveToPoint()
     {
-        Vector3 randomDirection = Random.insideUnitSphere * rango;
+        Vector3 randomDirection = Random.insideUnitSphere * range;
         randomDirection += transform.position;
         NavMeshHit hit;
 
-        if(NavMesh.SamplePosition(randomDirection, out hit, rango, NavMesh.AllAreas))
+        if(NavMesh.SamplePosition(randomDirection, out hit, range, NavMesh.AllAreas))
         {
             agent.SetDestination(hit.position);
             dinoAnimator.SetBool("isWalking",true);
         }
-        else
-        {
-            Debug.LogWarning("No se encontró un punto válido en el rango especificado.");
-        }
     }
 
-    private IEnumerator esperaYmueve()
+    private IEnumerator WaitMove()
     {
-        esperando = true;
+        waiting = true;
         dinoAnimator.SetBool("isWalking", false);
 
-        yield return new WaitForSeconds(tiempoEspera);
-        moverAlPunto();
-        esperando = false;
+        yield return new WaitForSeconds(waitTime);
+        moveToPoint();
+        waiting = false;
     }
 }

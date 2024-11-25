@@ -1910,9 +1910,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dinoAnimator: {fileID: 672100514}
-  rango: 200
-  tiempoEspera: 0.29
-  quieto: 1
+  range: 100
+  waitTime: 1.5
+  stayTime: 1
 --- !u!65 &672100517
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6535,9 +6535,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dinoAnimator: {fileID: 2050103432}
-  rango: 200
-  tiempoEspera: 3.2
-  quieto: 1
+  range: 100
+  waitTime: 1.5
+  stayTime: 1
 --- !u!65 &2050103434
 BoxCollider:
   m_ObjectHideFlags: 0
