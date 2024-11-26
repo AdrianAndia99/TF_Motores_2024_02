@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 54a9fa56d0cdc0b438ee6d1b5bb47c24
+guid: 7ec64486937ed8547b9b7531271dd61b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CH_NPC_MOB_Tricera_A01_MI_BYN
-    second: {fileID: 2100000, guid: aabd66566ccc7094397977a157688fc9, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
