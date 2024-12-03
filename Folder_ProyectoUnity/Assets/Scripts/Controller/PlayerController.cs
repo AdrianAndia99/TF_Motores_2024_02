@@ -8,16 +8,21 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Vector2 moveInput;
     [SerializeField]private float speed;
+    [SerializeField]private float speedMultiplier;
+    [SerializeField] private Animator playerAnimator;
 
     [Header("Rotacion y velocidad")]
     [SerializeField] private float speedRotation;
-    [SerializeField] private float giro; 
+    [SerializeField] private float giro;
+    
     [SerializeField] private SoundsSO playerEffects;
     public static event Action OnVictory;
     public static event Action OnDefeat;
     public static event Action<int> OnCollect;
     public static event Action<int> OnCollision;
 
+    private bool isRunning;
+    private bool isWalk;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -26,10 +31,32 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+
+        if (context.started)
+        {
+            isWalk = true;
+            playerAnimator.SetBool("isWalk",isWalk);
+        }
+        else if (context.canceled)
+        {
+            isWalk = false;
+            playerAnimator.SetBool("isWalk", isWalk);
+        }
     }
     public void OnSprint(InputAction.CallbackContext context)
     {
-
+        if (context.started)
+        {
+            isRunning = true;
+            playerAnimator.SetBool("isRun", isRunning);
+            speed = speed * 1.5f;
+        }
+        else if (context.canceled)
+        {
+            isRunning = false;
+            playerAnimator.SetBool("isRun", isRunning);
+            speed = 15f;
+        }
     }
     private void FixedUpdate()
     {
@@ -56,7 +83,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Dino"))
         {
             OnCollision?.Invoke(1);
-        }else if(collision.gameObject.CompareTag("Tirannosaurus"))
+        }else if(collision.gameObject.CompareTag("REX"))
         {
             OnDefeat?.Invoke();
         }
