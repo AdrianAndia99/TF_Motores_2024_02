@@ -15,6 +15,7 @@ public class DinoController : MonoBehaviour
     [Header("NavMesh")]
     [SerializeField] private Transform[] patrolPoints;
     [SerializeField] private int currentPointIndex = 0;
+    [SerializeField] private Transform player;
     private NavMeshAgent agent;
 
 
@@ -27,6 +28,7 @@ public class DinoController : MonoBehaviour
         originalScale = transform.localScale;
         agent = GetComponent<NavMeshAgent>();
     }
+
     void Update()
     {
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
@@ -34,6 +36,7 @@ public class DinoController : MonoBehaviour
             MoveToNextPoint();
         }
     }
+
     void MoveToNextPoint()
     {
         if (patrolPoints.Length == 0) 

@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float giro; 
     [SerializeField] private SoundsSO playerEffects;
     public static event Action OnVictory;
+    public static event Action OnDefeat;
     public static event Action<int> OnCollect;
     public static event Action<int> OnCollision;
 
@@ -55,7 +56,9 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Dino"))
         {
             OnCollision?.Invoke(1);
-            //OnDefeat?.Invoke();
+        }else if(collision.gameObject.CompareTag("Tirannosaurus"))
+        {
+            OnDefeat?.Invoke();
         }
     }
     private void OnTriggerEnter(Collider other)

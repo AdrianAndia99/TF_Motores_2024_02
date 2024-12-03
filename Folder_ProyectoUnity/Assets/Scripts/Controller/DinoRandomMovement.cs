@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class DinoRandomMovement : MonoBehaviour
 {
     NavMeshAgent agent;
-    [SerializeField] private Animator dinoAnimator;
+    //[SerializeField] private Animator dinoAnimator;
     [SerializeField] private float range = 10f;
     [SerializeField] private float waitTime = 1.5f;
     [SerializeField] private float stayTime = 1f;
@@ -16,7 +16,7 @@ public class DinoRandomMovement : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        dinoAnimator = GetComponent<Animator>();
+       // dinoAnimator = GetComponent<Animator>();
         moveToPoint();
     }
 
@@ -38,7 +38,7 @@ public class DinoRandomMovement : MonoBehaviour
             moveToPoint();
         }
 
-        dinoAnimator.SetBool("isWalking", agent.velocity.sqrMagnitude > 0.1f);
+       // dinoAnimator.SetBool("isWalking", agent.velocity.sqrMagnitude > 0.1f);
     }
 
     private void moveToPoint()
@@ -50,14 +50,14 @@ public class DinoRandomMovement : MonoBehaviour
         if(NavMesh.SamplePosition(randomDirection, out hit, range, NavMesh.AllAreas))
         {
             agent.SetDestination(hit.position);
-            dinoAnimator.SetBool("isWalking",true);
+           // dinoAnimator.SetBool("isWalking",true);
         }
     }
 
     private IEnumerator WaitMove()
     {
         waiting = true;
-        dinoAnimator.SetBool("isWalking", false);
+        //dinoAnimator.SetBool("isWalking", false);
 
         yield return new WaitForSeconds(waitTime);
         moveToPoint();

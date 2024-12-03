@@ -224,6 +224,7 @@ MonoBehaviour:
   - {fileID: 1007301521}
   - {fileID: 693281442}
   currentPointIndex: 0
+  player: {fileID: 0}
   dinoSounds: {fileID: 11400000, guid: d6d432dd6b2f1aa4c8c7c597c3daccd4, type: 2}
 --- !u!195 &16396828
 NavMeshAgent:
@@ -414,6 +415,7 @@ MonoBehaviour:
   - {fileID: 489639223}
   - {fileID: 956335762}
   currentPointIndex: 0
+  player: {fileID: 0}
   dinoSounds: {fileID: 11400000, guid: d6d432dd6b2f1aa4c8c7c597c3daccd4, type: 2}
 --- !u!1 &85340870
 GameObject:
@@ -543,7 +545,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3456435db62463f49a86fd1eec87791f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dinoAnimator: {fileID: 234899299}
   range: 100
   waitTime: 1.5
   stayTime: 1
@@ -1173,8 +1174,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.115077235, y: 0.22619191, z: -0.026920984, w: 0.96688664}
-  m_LocalPosition: {x: -901.8078, y: 30.44, z: 472.50595}
+  m_LocalRotation: {x: 0.11798925, y: -0.057035968, z: 0.0067883343, w: 0.9913523}
+  m_LocalPosition: {x: -821.12256, y: 30.44, z: 430.76886}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2064,12 +2065,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!95 &672100514 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6061421585545841212, guid: 0c7507cbc6e466248bab80f4aff376a5,
-    type: 3}
-  m_PrefabInstance: {fileID: 672100511}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &672100516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2082,7 +2077,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3456435db62463f49a86fd1eec87791f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dinoAnimator: {fileID: 672100514}
   range: 100
   waitTime: 1.5
   stayTime: 1
@@ -4111,6 +4105,7 @@ MonoBehaviour:
   - {fileID: 1361455590}
   - {fileID: 1717960694}
   currentPointIndex: 0
+  player: {fileID: 0}
   dinoSounds: {fileID: 11400000, guid: d6d432dd6b2f1aa4c8c7c597c3daccd4, type: 2}
 --- !u!195 &1120356207
 NavMeshAgent:
@@ -5323,13 +5318,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730030956}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.24801119, z: -0, w: 0.96875715}
-  m_LocalPosition: {x: -896.48, y: 27.04, z: 483.27}
+  m_LocalRotation: {x: -0, y: -0.036638796, z: -0, w: 0.99932855}
+  m_LocalPosition: {x: -822.5, y: 27.04, z: 442.7}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 28.72, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -4.199, z: 0}
 --- !u!114 &1730030962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5458,8 +5453,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753747893}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.115077235, y: 0.22619191, z: -0.026920984, w: 0.96688664}
-  m_LocalPosition: {x: -901.8078, y: 30.44, z: 472.50595}
+  m_LocalRotation: {x: 0.11798925, y: -0.057035968, z: 0.0067883343, w: 0.9913523}
+  m_LocalPosition: {x: -821.12256, y: 30.44, z: 430.76886}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6585,17 +6580,17 @@ PrefabInstance:
     - target: {fileID: 5184326171838986978, guid: 421648446a5792545bb991226ca5bf3b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 7.998809
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5184326171838986978, guid: 421648446a5792545bb991226ca5bf3b,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 8.500335
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5184326171838986978, guid: 421648446a5792545bb991226ca5bf3b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 7.998809
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5184326171838986978, guid: 421648446a5792545bb991226ca5bf3b,
         type: 3}
@@ -6701,7 +6696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3456435db62463f49a86fd1eec87791f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dinoAnimator: {fileID: 2048696738}
   range: 100
   waitTime: 1.5
   stayTime: 1

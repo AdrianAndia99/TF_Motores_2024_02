@@ -16,11 +16,13 @@ public class GameManager : MonoBehaviour
     {
         PlayerController.OnVictory += LoadVictoryScene;
         UIcontroller.OnDefeat += LoadDefeatScene;
+        PlayerController.OnDefeat += LoadDefeatScene;
     }
     private void OnDisable()
     {
         PlayerController.OnVictory -= LoadVictoryScene;
         UIcontroller.OnDefeat -= LoadDefeatScene;
+        PlayerController.OnDefeat -= LoadDefeatScene;
     }
 
     private void Start()
