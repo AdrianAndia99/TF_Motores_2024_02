@@ -92,6 +92,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Truco",
+            "id": "7678aeda-1e27-4990-b8d4-b85371f3d43c",
+            "actions": [
+                {
+                    "name": "InputTruco",
+                    "type": "Button",
+                    "id": "1a147382-1933-4c12-aa22-d78e3b824204",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b9f515cf-fad7-4339-b5f2-faf317271580",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InputTruco",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

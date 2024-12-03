@@ -13,23 +13,5 @@ public class SliderController : MonoBehaviour
         sfxSlider.value = AudioManager.Instance.GetSFXVolume();
         volumeSlider.value = AudioManager.Instance.GetMusicVolume();
 
-        masterSlider.onValueChanged.AddListener(OnMasterVolumeChange);
-        sfxSlider.onValueChanged.AddListener(OnSFXVolumeChange);
-        volumeSlider.onValueChanged.AddListener(OnMusicVolumeChange);
-    }
-
-    private void OnMasterVolumeChange(float value)
-    {
-        AudioManager.Instance.UpdateMasterVolume(value);
-    }
-
-    private void OnSFXVolumeChange(float value)
-    {
-        AudioManager.Instance.UpdateSFXVolume(value);
-    }
-
-    private void OnMusicVolumeChange(float value)
-    {
-        AudioManager.Instance.UpdateMusicVolume(value);
     }
 }

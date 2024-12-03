@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f560b5f3363254d9498c44e8fa1fae, type: 3}
+  m_Name: VelociraptorSounds
+  m_EditorClassIdentifier: 
+  SoundEffects:
+  - {fileID: 11400000, guid: 18452b2f9cdfc954fbc1450fbd661890, type: 2}
+  - {fileID: 11400000, guid: 108369708ebf59e44a7f3bed83acf4f9, type: 2}
+  - {fileID: 11400000, guid: 6a851e3670fab5e4190e54634c18d027, type: 2}
+  - {fileID: 11400000, guid: 636bb4bc459d48d4287b6b96e2d7d6d8, type: 2}

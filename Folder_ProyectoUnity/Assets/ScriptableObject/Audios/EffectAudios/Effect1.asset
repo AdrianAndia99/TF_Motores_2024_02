@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fcf182fe79a8d4438732a1f434e1067, type: 3}
   m_Name: Effect1
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 0dd9b4f161333424e9d566787f457989, type: 3}
+  audioClip: {fileID: 8300000, guid: fce1609f5c65efb4a8a2481790028364, type: 3}
   mixerSO: {fileID: 11400000, guid: 0cb7d011aaf78b74ba9a6a91c8793fe0, type: 2}
   volume: 1
   pitch: 1

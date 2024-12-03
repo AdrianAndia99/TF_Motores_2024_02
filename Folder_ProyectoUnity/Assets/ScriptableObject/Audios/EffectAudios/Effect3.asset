@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fcf182fe79a8d4438732a1f434e1067, type: 3}
+  m_Name: Effect3
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: f6cfe836440a5714c8f5a22f3f22dce7, type: 3}
+  mixerSO: {fileID: 11400000, guid: 0cb7d011aaf78b74ba9a6a91c8793fe0, type: 2}
+  volume: 1
+  pitch: 1

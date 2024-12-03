@@ -37,8 +37,4 @@ public class SoundsSO : ScriptableObject
     { 
         PlaySoundAt(4); 
     }
-    public void PlaySound5() 
-    { 
-        PlaySoundAt(5); 
-    }
 }

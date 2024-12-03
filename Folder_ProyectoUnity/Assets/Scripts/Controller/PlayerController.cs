@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Vector2 moveInput;
     [SerializeField]private float speed;
-    [SerializeField]private float speedMultiplier;
     [SerializeField] private Animator playerAnimator;
 
     [Header("Rotacion y velocidad")]
