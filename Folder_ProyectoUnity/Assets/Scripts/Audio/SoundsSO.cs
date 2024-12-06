@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoundsSO : ScriptableObject
 {
     [SerializeField] private AudioClipSO[] SoundEffects;
+    public AudioClipSO[] soundEffectsAccess => SoundEffects;
 
     public void PlaySoundAt(int index)
     {
@@ -17,6 +18,16 @@ public class SoundsSO : ScriptableObject
             Debug.Log("Indice fuera de rango del arreglo de efectos de sonido.");
         }
     }
+    public float GetClipLengthAt(int index)
+    {
+        if (index >= 0 && index < SoundEffects.Length)
+        {
+            return SoundEffects[index].AudioClip.length;
+        }
+        Debug.Log("Índice fuera de rango al obtener la duración del clip.");
+        return 0f;
+    }
+
     public void PlaySound0() 
     { 
         PlaySoundAt(0); 
