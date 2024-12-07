@@ -21,6 +21,7 @@ public class UIcontroller : MonoBehaviour
     private int currentScore = 0;
     private int currentLive = 5;
 
+    [SerializeField] private GameObject escapeItem;
     private void OnEnable()
     {
         PlayerController.OnCollect += UpdateScore;
@@ -56,6 +57,10 @@ public class UIcontroller : MonoBehaviour
         currentScore += scoreAdd;
         scoreText.text = currentScore.ToString();
         Debug.Log("Score actualizado: " + scoreAdd);
+        if(currentScore == 10)
+        {
+            escapeItem.SetActive(true);
+        }
 
     }
     public void PausePanelIntro()
