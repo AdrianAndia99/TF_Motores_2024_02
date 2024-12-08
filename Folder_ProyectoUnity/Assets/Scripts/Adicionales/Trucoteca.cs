@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class Trucoteca : MonoBehaviour
 {
     public GameObject targetObject;
-    private string command = "13.1.19.9.1";
+    private string command = "041024";
     private string currentInput = "";
 
     public void OnAnyKey(InputAction.CallbackContext context)
