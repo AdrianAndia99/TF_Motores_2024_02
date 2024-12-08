@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using DG.Tweening;
 using System.Collections;
 public class PlayerController : MonoBehaviour
 {
@@ -12,9 +11,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Rotacion y velocidad")]
     [SerializeField] private float speedRotation;
-    [SerializeField] private float giro;
-    
-    [SerializeField] private SoundsSO playerEffects;
+    [SerializeField] private float giro;   
     public static event Action OnVictory;
     public static event Action OnDefeat;
     public static event Action<int> OnCollect;
@@ -59,18 +56,17 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Vector3 direction = new Vector3(moveInput.x, 0, moveInput.y).normalized;
-
+        Vector3 direction = new Vector3(moveInput.x, 0f, moveInput.y).normalized;
 
         if (direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref speedRotation, giro);
-            transform.rotation = Quaternion.Euler(0, angle, 0);
 
-            Vector3 moveDirection = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
-            rb.MovePosition(transform.position + moveDirection * speed * Time.deltaTime);
+            float smoothAngle = Mathf.LerpAngle(transform.eulerAngles.y, targetAngle, giro * Time.fixedDeltaTime);
+            transform.rotation = Quaternion.Euler(0f, smoothAngle, 0f);
 
+            Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            rb.MovePosition(rb.position + moveDirection * speed * Time.deltaTime);
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -82,6 +78,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Dino"))
         {
             OnCollision?.Invoke(1);
+            
         }else if(collision.gameObject.CompareTag("REX"))
         {
             OnDefeat?.Invoke();
