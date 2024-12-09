@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: RexSounds
   m_EditorClassIdentifier: 
   SoundEffects:
+  - {fileID: 11400000, guid: 242a4b8bc68f25244b6fd7290f753f62, type: 2}
   - {fileID: 11400000, guid: d082dbba3708d3f488e2b45758a346ba, type: 2}
   - {fileID: 11400000, guid: eaa399b75ec31da4b8b8528e07d02bd3, type: 2}
-  - {fileID: 11400000, guid: 290603febe667fb45809501c41a51086, type: 2}
-  - {fileID: 11400000, guid: 242a4b8bc68f25244b6fd7290f753f62, type: 2}

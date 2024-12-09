@@ -18,10 +18,10 @@ public class UIcontroller : MonoBehaviour
     [SerializeField] private float topPosY, centerPositionY;
     [SerializeField] private float tweenDuration;
     public static event Action OnDefeat;
+    public static event Action OnFinal;
     private int currentScore = 0;
     private int currentLive = 5;
 
-    [SerializeField] private GameObject escapeItem;
     private void OnEnable()
     {
         PlayerController.OnCollect += UpdateScore;
@@ -59,7 +59,7 @@ public class UIcontroller : MonoBehaviour
         Debug.Log("Score actualizado: " + scoreAdd);
         if(currentScore == 10)
         {
-            escapeItem.SetActive(true);
+            OnFinal?.Invoke();
         }
 
     }

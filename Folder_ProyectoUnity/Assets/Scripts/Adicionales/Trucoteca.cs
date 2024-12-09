@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
@@ -5,9 +6,10 @@ using System.Collections.Generic;
 
 public class Trucoteca : MonoBehaviour
 {
-    public GameObject targetObject;
+    [SerializeField] private GameObject targetObject;
     private string command = "041024";
     private string currentInput = "";
+    public static event Action OnFinal;
 
     public void OnAnyKey(InputAction.CallbackContext context)
     {
@@ -40,6 +42,7 @@ public class Trucoteca : MonoBehaviour
                     Debug.Log("Comando completado");
                     if (targetObject != null)
                     {
+                        OnFinal?.Invoke();
                         targetObject.SetActive(true);
                     }
                     currentInput = "";
